@@ -17,7 +17,6 @@ export default function Home(props) {
     
     useEffect(() => {
         Request({}, "GET", global["VERIFICATOKEN"], (res)=>{
-          console.log(res, "execute");
           let r = JSON.parse(res);
           r.token ? setPagina(<Usuario usuario={r.usuario}  />) : setPagina(<Login alteraTela={(user)=> setPagina(<Usuario usuario={user}  />) } />);
       })

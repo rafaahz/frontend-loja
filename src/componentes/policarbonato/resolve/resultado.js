@@ -261,7 +261,7 @@ export default function Ajustes(props){
     
     }, [props]);
 
-    if(props.largura >100 && props.comprimento > 100){
+    if(props.largura >100 && props.comprimento > 100 && props.go){
         return(
             <>
                 <Desenha array={lista || []} comprimento={props.comprimento}  />

@@ -1,11 +1,12 @@
+var url = process.env.REACT_APP_API_URL;
 
 const global = {
-    CIDADES : "http://localhost:8000/cidades",
-    ITEM : "http://localhost:8000/item",
-    TRANSPORTADORAS : "http://localhost:8000/transportadoras",
-    ENVIAREMAIL : "http://localhost:8000/htmlemail",
-    LOGIN : "http://localhost:8000/login",
-    VERIFICATOKEN: "http://localhost:8000/verificaToken",
+    CIDADES : url+"/cidades",
+    ITEM : url+"/item",
+    TRANSPORTADORAS : url+"/transportadoras",
+    ENVIAREMAIL : url+"/htmlemail",
+    LOGIN : url+"/login",
+    VERIFICATOKEN: url+"/verificaToken",
     EMAILS: [
         {nome: "EDIVALDO",  email: "edivaldo.salvador@vitoriadistribuidorarp.com.br"},
         {nome: "IAGO",  email: "sergio.iago@vitoriadistribuidorarp.com.br"},

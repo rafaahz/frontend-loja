@@ -106,7 +106,7 @@ export default function Resolve(props) {
               Valor total das placas:
             </span>
             <span className="font-weight-bold">
-              {qntPlacas * PrecoPlaca}
+              R$ {(qntPlacas * PrecoPlaca).toFixed(2)}
             </span>
           </div>
           <div className="d-flex m-2 border-bottom">

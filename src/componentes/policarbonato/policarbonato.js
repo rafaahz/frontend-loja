@@ -11,6 +11,7 @@ export default function Policarbonato(props){
     const [materiais, setMateriais] = useState(itens);
 
     const [modalShow, setModalShow] = useState(false);
+    const [go, setGo] = useState(false);
     
     function inputChange(item, e){
 
@@ -41,7 +42,13 @@ export default function Policarbonato(props){
                 </div>
             </div>
 
-            <Resultado itens={materiais} largura={largura} comprimento={comprimento} />
+            <div className="d-flex justify-content-center mt-2">
+                <button className="btn btn-info font-weight-bold col-4 mb-5" onClick={()=> setGo(!go) }>
+                    Resultado
+                </button>
+            </div>
+
+            <Resultado itens={materiais} largura={largura} comprimento={comprimento} go={go} />
 
             <Ajustes setItens={(obj)=> setMateriais(obj)} itens={materiais} modalShow={modalShow} setModalShow={( )=> setModalShow(false)} />
 
