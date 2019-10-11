@@ -18,14 +18,14 @@ export default async function Request(objeto, metodo, url, resposta){
 			resposta( xhr.response )
 			xhr.abort();
 		} else {
-			resposta(xhr.responseText);
 			loading.style.visibility = "hidden";
+			resposta(xhr.responseText);
 			xhr.abort();
 		}
 	}
 	xhr.onerror = function () {
-		alert(xhr.response || "Sem resposta do servidor");
 		loading.style.visibility = "hidden";
+		alert(xhr.response || "Sem resposta do servidor");
 	}
 	xhr.onprogress = function (event) {
 		
