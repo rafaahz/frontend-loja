@@ -58,7 +58,6 @@ export default function JuncaoCobranca() {
     }, [selectHandleChange, calendarioChange])
 
     function montaTabela(){
-        console.log(calendario, datas)
         return(
             setTabela(<Tabela razaoSocial={razao} cnpj={cnpj} nf1={nf1} nf2={nf2} datas={datas}/>)
         );
@@ -77,7 +76,6 @@ export default function JuncaoCobranca() {
     useEffect(() => {
         let i = 0;
         let cal = [];
-        console.log(datas)
         while(i<numCalendario){
             cal.push(<input key={i} type="date" id={i} className="form-control m-auto" style={{width: (100/numCalendario - 3)+"%"}}
             onChange={calendarioChange} />);

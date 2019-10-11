@@ -5,6 +5,8 @@ export default async function Request(objeto, metodo, url, resposta){
 	let token = localStorage.getItem("token");
 	
 	let loading = document.querySelector("#loading");
+	loading.style.visibility = "visible";
+
 	var xhr = new XMLHttpRequest();
 	xhr.open( metodo , url , true);
 	xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
@@ -12,17 +14,18 @@ export default async function Request(objeto, metodo, url, resposta){
 
 	xhr.onload = function () {
 		if (xhr.readyState === 4 && xhr.status === 200) {
-			if(loading) loading.style.visibility = "hidden";
+			loading.style.visibility = "hidden";
 			resposta( xhr.response )
 			xhr.abort();
 		} else {
 			resposta(xhr.responseText);
-			if(loading) loading.style.visibility = "hidden";
+			loading.style.visibility = "hidden";
 			xhr.abort();
 		}
 	}
 	xhr.onerror = function () {
-		console.log("ERRO NA REQUISIÇÂO");
+		alert(xhr.response || "Sem resposta do servidor");
+		loading.style.visibility = "hidden";
 	}
 	xhr.onprogress = function (event) {
 		

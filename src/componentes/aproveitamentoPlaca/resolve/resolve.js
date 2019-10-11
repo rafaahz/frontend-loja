@@ -77,7 +77,6 @@ export default function Resolve(props) {
   
   useEffect(()=>{
     setQntPlacas( Math.ceil(props.quantidade / calc1.total) );
-    console.log(calc1)
   }, [calc1])
 
   if(props.go){

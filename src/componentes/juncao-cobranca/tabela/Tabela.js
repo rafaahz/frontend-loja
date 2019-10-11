@@ -3,9 +3,6 @@ import React from 'react';
 
 export default function Tabela(props){
 
-  console.log(props.nf1)
-
-
     return(
         <table cellSpacing="0" cellPadding="0" border="0" align="center" style={{ maxWidth: "900px", width: "100%", fontFamily: 'Verdana'}}
         bgcolor="#FFFFFF" id="tabela">

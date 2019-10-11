@@ -32,6 +32,7 @@ class App extends Component {
               position: "fixed", alignItems: "center", zIndex: 2, background: "#000000ab",
               top: 0, left: 0
             }}>
+              
             <div className="spinner-border text-primary" style={{ height: "5rem", width: "5rem" }}></div>
           </div>
 
