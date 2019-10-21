@@ -19,7 +19,7 @@ export default function Whatsapp() {
 			}			
 			a.setAttribute("href", "https://api.whatsapp.com/send?phone=55"+tel+"&text="+mensagem.value);
 			a.style.display = "flex"; 
-		}
+        }
 
 
     return (

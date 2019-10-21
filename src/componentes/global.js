@@ -7,15 +7,27 @@ const global = {
     ENVIAREMAIL : url+"/htmlemail",
     LOGIN : url+"/login",
     VERIFICATOKEN: url+"/verificaToken",
-    EMAILS: [
-        {nome: "EDIVALDO",  email: "edivaldo.salvador@vitoriadistribuidorarp.com.br"},
-        {nome: "IAGO",  email: "sergio.iago@vitoriadistribuidorarp.com.br"},
-        {nome: "PAULO LEONARDO",  email: "paulo.leonardo@vitoriadistribuidorarp.com.br"},
-        {nome: "PAULO MENDES",  email: "paulo.mendes@vitoriadistribuidorarp.com.br"},
-        {nome: "RAFAEL",  email: "rafael.ribeiro@vitoriadistribuidorarp.com.br"},
-        {nome: "RAFAEL - OUTLOOK",  email: "rafaelvinicius_10@hotmail.com"}
-
-    ]
+    EMAILS: []
 }
+
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "http://localhost:8000/users" , true);
+xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
+xhr.setRequestHeader('x-access-token', localStorage.getItem("token") );
+
+xhr.onload = function () {
+	if (xhr.readyState === 4 && xhr.status === 200) {
+		global.EMAILS = JSON.parse(xhr.response);
+		xhr.abort();
+	} else {
+		alert(xhr.responseText);
+		global.EMAILS = [{nome: "FALHA NA BUSCA", email: "####"}];
+		xhr.abort();
+	}
+}
+xhr.onerror = function () {
+	alert(xhr.response || "Sem resposta do servidor");
+}
+xhr.send( null );
 
 export default global;
