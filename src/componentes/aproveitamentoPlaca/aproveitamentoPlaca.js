@@ -5,6 +5,9 @@ import Resolve from './resolve/resolve';
 // import { Container } from './styles';
 
 export default function AproveitamentoPlaca() {
+
+    document.title = 'CALCULO DE APROVEITAMENTO';
+
     // L = largura / C = comprimento
     const [placaL, setPlacaL] = useState('');
     const [placaC, setPlacaC] = useState('');

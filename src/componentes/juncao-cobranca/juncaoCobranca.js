@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 
-import global from '../global';
+import global, {atualizaEmails} from '../global';
 import NfeInfo from './nfeInfo/nfeInfo';
 import Tabela from './tabela/Tabela';
 import {sendTable} from '../helper/jsAjax';
@@ -24,6 +24,10 @@ export default function JuncaoCobranca() {
     const [nf2, setNf2] = useState({numero: '', valor: ''});
 
     const [tabela, setTabela] = useState('');
+
+    useEffect(()=>{
+        atualizaEmails();
+    }, [])
 
 
     const selectHandleChange = (e) => {

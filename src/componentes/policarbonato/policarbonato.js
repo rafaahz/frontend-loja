@@ -5,6 +5,8 @@ import itens from './itens/itens';
 
 export default function Policarbonato(props){
 
+    document.title = 'CALCULO POLICARBONATO';
+
     const [largura, setLargura] = useState('');
     const [comprimento, setComprimento] = useState('');
 

@@ -1,33 +1,37 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import InputsDeTexto from './inputs/inputsDeTexto';
 import ModalEditLinha from "./modalEditLinha/ModalEditLinha";
 
 import { Collapse, Button } from 'react-bootstrap';
 
-import global from '../global';
+import global, {atualizaEmails} from '../global';
 import GerarTabela from './tabela/gerarTabela';
 import { sendTable } from '../helper/jsAjax';
 
 
 export default function ConferirMaterial() {
 
-    document.title = 'CONFERIR MATERIAL'
+    document.title = 'CONFERIR MATERIAL';
 
+    
     const [email, setEmail] = useState('');
     const [col, setCol] = useState(2);
     const [maiorColuna, setMaiorColuna] = useState(2);
     const [titulo, setTitulo] = useState([]);
     const [linhas, setLinhas] = useState([]);
     const [msgDestinatario, setMsgDestinatario] = useState("SELECIONAR DESTINATARIO")
-
+    
     const [open, setOpen] = useState(false);
     const [notificacao, setNotificacao] = useState([]);
-
+    
     const [show, setShow] = useState(false);
     const [indiceEdit, setIndiceEdit] = useState(0);
-
+    
+    useEffect(()=>{
+        atualizaEmails();
+    }, [])
 
     function selectHandleChange(e) {
         if (isNaN(e.target.value)) {
