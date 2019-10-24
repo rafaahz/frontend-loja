@@ -22,7 +22,7 @@ export function atualizaEmails(){
 			xhr.abort();
 		} else {
 			alert(xhr.responseText);
-			global.EMAILS = [{nome: "FALHA NA BUSCA", email: "####"}];
+			global.EMAILS = [{nome: "LOGUIN REQUIRIDO", email: "####"}];
 			xhr.abort();
 		}
 	}
@@ -31,5 +31,7 @@ export function atualizaEmails(){
 	}
 	xhr.send( null );
 }
+
+atualizaEmails();
 
 export default global;

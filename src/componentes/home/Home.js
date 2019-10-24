@@ -10,15 +10,12 @@ export default function Home(props) {
 
     document.title = "Home - React APP";
 
+    const [pagina, setPagina] = useState(<Login alteraTela={(user)=> setPagina(<Usuario usuario={user} att={()=> setPagina(pagina) } />) } />);
 
-    const [pagina, setPagina] = useState(<Login alteraTela={(user)=> setPagina(<Usuario usuario={user}  />) } />);
-
-
-    
     useEffect(() => {
         Request({}, "GET", global["VERIFICATOKEN"], (res)=>{
           let r = JSON.parse(res);
-          r.token ? setPagina(<Usuario usuario={r.usuario}  />) : setPagina(<Login alteraTela={(user)=> setPagina(<Usuario usuario={user}  />) } />);
+          r.token ? setPagina(<Usuario usuario={r.usuario} att={()=> setPagina(pagina) } />) : setPagina(<Login alteraTela={(user)=> setPagina(<Usuario usuario={user} />) } />);
       })
 
     }, []);

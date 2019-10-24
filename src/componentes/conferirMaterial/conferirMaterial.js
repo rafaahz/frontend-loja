@@ -21,7 +21,6 @@ export default function ConferirMaterial() {
     const [maiorColuna, setMaiorColuna] = useState(2);
     const [titulo, setTitulo] = useState([]);
     const [linhas, setLinhas] = useState([]);
-    const [msgDestinatario, setMsgDestinatario] = useState("SELECIONAR DESTINATARIO")
     
     const [open, setOpen] = useState(false);
     const [notificacao, setNotificacao] = useState([]);
@@ -31,12 +30,12 @@ export default function ConferirMaterial() {
     
     useEffect(()=>{
         atualizaEmails();
+        console.log(global);
     }, [])
 
     function selectHandleChange(e) {
         if (isNaN(e.target.value)) {
             setEmail(e.target.value);
-            setMsgDestinatario("ALTERAR DESTINATARIO");
         } else {
             setCol(e.target.value);
         }
@@ -139,8 +138,9 @@ export default function ConferirMaterial() {
                         ENVIAR E-MAIL
                     </button>
 
-                    <select value={msgDestinatario} onChange={selectHandleChange} className="btn btn-primary m-1 col-md-3">
-                        <option disabled>{msgDestinatario}</option>
+                    <select value={"SELECIONAR DESTINATARIO"} onChange={selectHandleChange} className="btn btn-primary m-1 col-md-3">
+                        <option disabled>{"SELECIONAR DESTINATARIO"}</option>
+                        {console.log(global)}
                         {global.EMAILS.map((item, i) => {
                             return <option key={i} value={item.email}> {item.nome} </option>
                         })}
