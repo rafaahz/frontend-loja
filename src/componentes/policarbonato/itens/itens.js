@@ -43,6 +43,12 @@ var itens = {
         largura: 50,
         preco: 100.00
     },
+
+    barraChata : {
+        comprimento: 6000,
+        largura: 25,
+        preco: 45
+    },
     
     perfilU : {
         comprimento: 6000,
@@ -54,7 +60,20 @@ var itens = {
         comprimento: 30000,
         largura: 25,
         preco: 35.00
+    },
+
+    fitaPorosa : {
+        comprimento: 25000,
+        largura: 25,
+        preco: 50.00
+    },
+
+    fitaEspuma : {
+        comprimento: 10000,
+        largura: 25,
+        preco: 10.00
     }
+
 }
 
 

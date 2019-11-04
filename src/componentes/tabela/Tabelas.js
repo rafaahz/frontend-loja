@@ -20,15 +20,15 @@ export default class Tabelas extends Component {
   componentDidMount(){ 
     document.title = "TABELA TRANSPORTADORAS";
 
-    Request(null, "GET", global["CIDADES"], function(res){
-        let resposta = JSON.parse(res);
-        let cidades = resposta[0];
-        let transportadoras = resposta[1];
-    
-        this.setState({cidades});
-        this.setState({transportadoras});
-        this.setState({array: resposta});
-        this.setState({ativa: this.state.transportadoras});
+    Request(null, "GET", global["CIDADES"], function(res, err){
+            let resposta = JSON.parse(res);
+            let cidades = resposta[0];
+            let transportadoras = resposta[1];
+        
+            this.setState({cidades});
+            this.setState({transportadoras});
+            this.setState({array: resposta});
+            this.setState({ativa: this.state.transportadoras});
     }.bind(this) )
 
     }    

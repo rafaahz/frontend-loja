@@ -15,7 +15,11 @@ export default function Login(props) {
     function logar(){
       let checkLogin = document.getElementById("checkLogin");
 
-      if(checkLogin.checked) localStorage.setItem("email", login);
+      if(checkLogin.checked){
+        localStorage.setItem("email", login);
+      }  else {
+        localStorage.removeItem("email");
+      }
 
       Autentica(login, senha, (res)=>{
 
@@ -40,12 +44,11 @@ export default function Login(props) {
 
     }, [])
 
-    
-
     return (
       <div className="d-flex container-fluid p-5 justify-content-center align-items-center">
 
-        <div className="col-md-11 col-xl-8 col-sm-12 border bg-dark d-flex flex-column justify-content-center align-items-center rounded shadow" style={{padding: "9em 2em 9em 2em"}}>
+        <form onSubmit={(e)=> e.preventDefault()} className="col-md-11 col-xl-8 col-sm-12 border bg-dark d-flex flex-column justify-content-center align-items-center rounded shadow" style={{padding: "9em 2em 9em 2em"}}>
+        <div className="w-75 d-flex flex-column justify-content-center align-items-center">
             <span className={"alert " + mensagem[1] }> {mensagem[0]} </span>
             <input className="form-control w-50 m-2 text-center" value={login} placeholder="Email" type="email" name="email" onChange={(e)=> setLogin(e.target.value)} />
             <input className="form-control w-50 m-2 text-center" value={senha} placeholder="Senha" type="password" name="senha" onChange={(e)=> setSenha(e.target.value)} />
@@ -55,6 +58,7 @@ export default function Login(props) {
             </label>
             <button className="form-control w-25 m-2 btn-primary btn" style={{fontWeight: "bolder"}} onClick={logar}>Login</button>
         </div>
+        </form>
 
       </div>
     );

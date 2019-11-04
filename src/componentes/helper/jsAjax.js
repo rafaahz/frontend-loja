@@ -19,7 +19,7 @@ export default async function Request(objeto, metodo, url, resposta){
 			xhr.abort();
 		} else {
 			loading.style.visibility = "hidden";
-			resposta(xhr.responseText);
+			resposta(xhr.responseText, "FAÇA LOGIN PARA ACESSAR AS INFORMAÇÕES DO SERVIDOR");
 			xhr.abort();
 		}
 	}

@@ -29,8 +29,7 @@ export default function ConferirMaterial() {
     const [indiceEdit, setIndiceEdit] = useState(0);
     
     useEffect(()=>{
-        atualizaEmails();
-        console.log(global);
+        atualizaEmails()
     }, [])
 
     function selectHandleChange(e) {
@@ -140,9 +139,8 @@ export default function ConferirMaterial() {
 
                     <select value={"SELECIONAR DESTINATARIO"} onChange={selectHandleChange} className="btn btn-primary m-1 col-md-3">
                         <option disabled>{"SELECIONAR DESTINATARIO"}</option>
-                        {console.log(global)}
                         {global.EMAILS.map((item, i) => {
-                            return <option key={i} value={item.email}> {item.nome} </option>
+                            return (<option key={i} value={item.email}> {item.nome} </option>)
                         })}
                     </select>
 

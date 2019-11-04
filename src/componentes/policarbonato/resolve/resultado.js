@@ -12,6 +12,10 @@ export default function Ajustes(props){
         const perfilU = props.itens.perfilU;
         const fitaAluminio = props.itens.fitaAluminio;
 
+        const fitaPorosa = props.itens.fitaPorosa;
+        const fitaEspuma = props.itens.fitaEspuma;
+        const barraChata = props.itens.barraChata;
+
         let acomp = Math.floor(policarbonato.comprimento / props.comprimento); // Aproveitamento do Comprimento
         let QntFitaAl = Math.ceil( props.largura * 2 / fitaAluminio.comprimento ); // Quantidade de fita aluminio
         let QntPerfilU = Math.ceil( props.largura * 2 / perfilU.comprimento ); // Quantidade de perfil u
