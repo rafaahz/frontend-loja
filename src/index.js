@@ -9,6 +9,7 @@ import juncaoCobranca from './componentes/juncao-cobranca/juncaoCobranca';
 import Whatsapp from './componentes/whatsapp/whatsapp';
 import policarbonato from './componentes/policarbonato/policarbonato';
 import aproveitamentoPlaca from './componentes/aproveitamentoPlaca/aproveitamentoPlaca';
+import Warzone from './componentes/warzone/Warzone';
 
 import './index.css';
 import {BrowserRouter, Route,Switch} from 'react-router-dom';
@@ -24,6 +25,7 @@ ReactDOM.render((
                         <Route exact path="/whatsapp" component={Whatsapp}/> 
                         <Route exact path="/calculo-policarbonato" component={policarbonato}/>                      
                         <Route exact path="/calculo-placa" component={aproveitamentoPlaca}/>                      
+                        <Route exact path="/warzone" component={Warzone}/>                      
                     </Switch>            
             </App>
         </BrowserRouter>

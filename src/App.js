@@ -119,6 +119,15 @@ class App extends Component {
                       </Link>
                     </li>
 
+                    <li className="nav-item text-left mt-2 mb-2">
+                      <Link to="/warzone" className="text-light text-decoration-none mt-2 font-weight-bold">
+                        <div className="d-flex justify-content-between text-right align-items-center border-bottom underline pb-2">
+                          <span className="text-light pr-2"><FaCalculator /></span>
+                          <span>Warzone</span>
+                        </div>
+                      </Link>
+                    </li>
+
                   </ul>
                 </div>
               </Collapse>
