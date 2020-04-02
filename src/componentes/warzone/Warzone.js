@@ -7,7 +7,7 @@ export default function Warzone() {
 
 
     useEffect( ()=>{
-        var listUser = ["alizera#11908", "eraserhead#11284", "ChutoGnomos#1775", "SaGaH#1620"];
+        var listUser = ["alizera#11908", "eraserhead#11284", "ChutoGnomos#1775", "SaGaH#1620", "Victor#15236"];
         var objetos = [];
 
         listUser.forEach((str, i) => {
