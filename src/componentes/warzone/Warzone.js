@@ -43,7 +43,13 @@ export default function Warzone() {
   return (
     <div className="container">
         {
-            lista ? lista.map( (v,i)=>{
+            lista ? lista.sort( (a,b)=>{
+                let um = a.data.kdRatio;
+                let dois = b.data.kdRatio;
+                if(um < dois) return 1;
+                if(um > dois) return -1;
+                return 0;
+            }).map( (v,i)=>{
                 return (
                     <table key={i} className="table table-dark table-striped table-hover col-12 ml-auto mr-auto mb-5 border">
 
