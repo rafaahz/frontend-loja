@@ -32,14 +32,10 @@ class App extends Component {
               position: "fixed", alignItems: "center", zIndex: 2, background: "#000000ab",
               top: 0, left: 0
             }}>
-              
             <div className="spinner-border text-primary" style={{ height: "5rem", width: "5rem" }}></div>
           </div>
-
           <div className="row" style={{ height: "-webkit-fill-available" }}>
-
             <nav className="col-md-2 bg-dark align-items-start justify-content-center" style={{ minHeight: "100vh" }}>
-
               <Button
                 onClick={() => this.setState({open: !this.state.open })}
                 aria-controls="navbar"
@@ -114,7 +110,7 @@ class App extends Component {
                       <Link to="/calculo-placa" className="text-light text-decoration-none mt-2 font-weight-bold">
                         <div className="d-flex justify-content-between text-right align-items-center border-bottom underline pb-2">
                           <span className="text-light pr-2"><FaCalculator /></span>
-                          <span>Aproveitamento de placa</span>
+                          <span>Calculo de aproveitamento</span>
                         </div>
                       </Link>
                     </li>
