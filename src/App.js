@@ -38,7 +38,7 @@ class App extends Component {
 
           <div className="row" style={{ height: "-webkit-fill-available" }}>
 
-            <nav className="col-md-2 bg-dark align-items-start justify-content-center">
+            <nav className="col-md-2 bg-dark align-items-start justify-content-center" style={{ minHeight: "100vh" }}>
 
               <Button
                 onClick={() => this.setState({open: !this.state.open })}
@@ -115,15 +115,6 @@ class App extends Component {
                         <div className="d-flex justify-content-between text-right align-items-center border-bottom underline pb-2">
                           <span className="text-light pr-2"><FaCalculator /></span>
                           <span>Aproveitamento de placa</span>
-                        </div>
-                      </Link>
-                    </li>
-
-                    <li className="nav-item text-left mt-2 mb-2">
-                      <Link to="/warzone" className="text-light text-decoration-none mt-2 font-weight-bold">
-                        <div className="d-flex justify-content-between text-right align-items-center border-bottom underline pb-2">
-                          <span className="text-light pr-2"><FaCalculator /></span>
-                          <span>Warzone</span>
                         </div>
                       </Link>
                     </li>
